@@ -11,14 +11,11 @@ def create_tables():
 
     # Create users table (for authentication)
     cursor.execute('''CREATE TABLE IF NOT EXISTS users (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        username TEXT UNIQUE NOT NULL,
-                        contact TEXT UNIQUE NOT NULL,
-                        password TEXT NOT NULL,
-                        plaintext_password TEXT,
-                        otp TEXT,
-                        is_verified BOOLEAN DEFAULT 0,
-                        otp_expiry TIMESTAMP)''')
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    username TEXT UNIQUE NOT NULL,
+                    password TEXT NOT NULL,
+                    plaintext_password TEXT,
+                    contact TEXT)''')
 
     # Create predictions table (for storing model forecasts)
     cursor.execute('''CREATE TABLE IF NOT EXISTS predictions (
