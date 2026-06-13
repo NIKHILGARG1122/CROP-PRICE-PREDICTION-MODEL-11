@@ -238,17 +238,10 @@ def register():
             conn.close()
  
         # Generate and send OTP
-        otp    = ''.join(random.choices('0123456789', k=6))
-        expiry = (datetime.now() + timedelta(minutes=5)).strftime('%Y-%m-%d %H:%M:%S')
- 
-        if not store_otp(contact, otp, expiry):
-            return jsonify({"error": "Failed to generate verification code"}), 500
- 
-        if not send_otp(contact, otp):
-            # Log but don't block – OTP stored, user can use resend
-            app.logger.warning(f"OTP send failed for {contact}. OTP: {otp}")
- 
-        return jsonify({"message": "Registration successful. Please check your email/phone for the verification code."}), 201
+        return jsonify({
+    "message": "Registration successful"
+    }), 201
+         
  
     except Exception as e:
         app.logger.error(f"Registration error: {str(e)}")

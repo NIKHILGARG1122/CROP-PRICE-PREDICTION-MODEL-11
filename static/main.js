@@ -539,9 +539,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Update UI elements
-                document.getElementById('loginBtn').style.display = 'block';
-                document.getElementById('signoutBtn').style.display = 'none';
-                document.querySelector('.predictor-card').style.display = 'none';
+               showNotification('Registration successful! Please login.', 'success');
+               document.getElementById('auth-modal').style.display = 'none';
                 
                 showNotification('Successfully signed out', 'success');
             } else {
