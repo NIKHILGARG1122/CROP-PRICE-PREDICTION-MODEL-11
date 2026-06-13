@@ -581,6 +581,6 @@ def predict_prices():
 # ─────────────────────────────────────────────
  
 if __name__ == "__main__":
-    verify_database()   # Always ensure schema is up to date before serving
-    app.run(debug=True)
- 
+    verify_database()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
