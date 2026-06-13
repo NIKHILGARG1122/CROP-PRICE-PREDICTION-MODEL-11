@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:5000";
+const API_BASE_URL = "https://crop-price-prediction-model-11.onrender.com";
 let priceChart = null;
 let historicalData = [];
 let predictedData = [];
